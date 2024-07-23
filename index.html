@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundVibes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="label" style="font-size: 36px; font-weight: bold; color: rgb(17, 17, 17); text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">SoundVibes</div>
+        
+    </nav>
+    <h1 id="currentSong" class="scrolling">No Song Playing</h1>
+
+    <div id="main-content">
+        <input type="text" id="SEARCHELEMENT" placeholder="Search Song" style="color: white; background-color: #333; border: none; padding: 10px; width: 200px;">
+        <button onclick="searchSONG()">Search</button>
+        <img src="" id="coverImage" alt="" class="hidden">
+        <div id="controls" class="hidden">
+            <button onclick="playMusic()">Play</button>
+            <button onclick="pauseMusic()">Pause</button>
+            <div id="seekBarContainer">
+                <input type="range" id="seekBar" value="0" min="0" step="1">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+nav {
+    background-color: teal;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-bottom: 2px solid #004d40;
+    position: relative;
+    height: 60px; /* Adjust height to accommodate scrolling text */
+}
+
+nav .label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav h1 {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 45px; /* Adjust padding to position the text lower */
+}
+
+ h1.scrolling {
+    animation: scroll 12s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+nav div {
+    margin-left: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #004d40;
+    margin: 0 5px; /* Space between links */
+}
+
+nav a:hover {
+    background-color: #003d33;
+}
+
+#main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 10px;
+    background-color: teal;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#SEARCHELEMENT {
+    width: 300px;
+    text-align: center;
+    color: white;
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 25px;
+    margin: 20px 0;
+}
+
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+#controls {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#seekBar {
+    width: 300px;
+    margin: 0 10px;
+}
+
+#seekBarContainer {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav .label {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav h1 {
+        position: static;
+        transform: none;
+        padding-top: 0;
+    }
+
+    nav div {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    #main-content {
+        padding: 20px;
+    }
+
+    input, button {
+        width: 90%;
+        max-width: none;
+    }
+
+    #seekBar {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .label {
+        font-size: 1.2em;
+    }
+
+    nav h1 {
+        font-size: 1.2em;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+}
